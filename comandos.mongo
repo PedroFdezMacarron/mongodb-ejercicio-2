@@ -30,7 +30,14 @@ db.movies.find({franchise:"The Hobbit"})
 
 // 5. Obtener todas las películas de los 90s.
 
-db.movies.find({year:{$gte:1990},year:{$lt:2000}})
+db.movies.find({"year":{$gte:1990,$lt:2000}})
 
+// 6. Obtener las películas estrenadas entre el año 2000 y 2010.
 
+db.movies.find({"year":{$gte:2000,$lt:2011}})
 
+// Actualizar Documentos
+
+1. Agregar sinopsis a "The Hobbit: An Unexpected Journey" : "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."
+
+db.movies.updateOne({title:"The Hobbit: An Unexpected Journey"},{$set:{synopsis:"A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."}})
